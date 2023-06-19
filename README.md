@@ -1,24 +1,12 @@
-# energy-n14-e13-mtt-prone-position-spine
+<!--
+ * @Author      : Mr.bin
+ * @Date        : 2023-06-16 21:33:18
+ * @LastEditTime: 2023-06-16 22:32:31
+ * @Description : energy-n14-e13-mtt-prone-position-spine
+-->
 
-## Project setup
-```
-npm install
-```
+# 卧姿肢体康复评估与训练系统-MTT 版
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## 传感器
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- 范围：0~100
