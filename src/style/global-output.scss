@@ -1,0 +1,10 @@
+/*
+ * @Author      : Mr.bin
+ * @Date        : 2021-09-11 09:25:47
+ * @LastEditTime: 2021-10-28 14:23:16
+ * @Description : 出口文件（引入顺序，下面会覆盖上面的）
+ */
+
+@import './global/variables.scss'; // 全局 css 变量
+@import './global/mixin.scss'; // 全局 mixin 混入
+@import './global/function.scss'; // 全局 css 函数

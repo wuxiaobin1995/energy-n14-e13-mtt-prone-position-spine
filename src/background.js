@@ -1,28 +1,42 @@
+/*
+ * @Author      : Mr.bin
+ * @Date        : 2023-06-16 21:34:27
+ * @LastEditTime: 2023-06-20 16:51:02
+ * @Description : 主进程入口
+ */
 'use strict'
 
-import { app, protocol, BrowserWindow } from 'electron'
+import { app, protocol, BrowserWindow, Menu, ipcMain } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
+
+// 关闭原生功能限制
+app.allowRendererProcessReuse = false
 
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([
   { scheme: 'app', privileges: { secure: true, standard: true } }
 ])
 
-async function createWindow () {
+async function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    show: false,
     webPreferences: {
-
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
       nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION,
-      contextIsolation: !process.env.ELECTRON_NODE_INTEGRATION
+      contextIsolation: !process.env.ELECTRON_NODE_INTEGRATION,
+      webSecurity: false, // 设为false则突破同源策略的限制，则允许加载本地资源，如音频、视频等
+      enableRemoteModule: true // 启用remote
     }
   })
+
+  // 永久删除菜单栏，快捷键也会删除
+  Menu.setApplicationMenu(null)
+  // 窗口默认最大化打开
+  win.maximize()
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
@@ -32,6 +46,21 @@ async function createWindow () {
     createProtocol('app')
     // Load the index.html when not in development
     win.loadURL('app://./index.html')
+  }
+
+  // 限制只可以打开一个应用
+  const gotTheLock = app.requestSingleInstanceLock()
+  if (!gotTheLock) {
+    app.quit()
+  } else {
+    app.on('second-instance', (event, commandLine, workingDirectory) => {
+      // 当运行第二个实例时，将会聚焦到mainWindow这个窗口
+      if (win) {
+        if (win.isMinimized()) win.restore()
+        win.focus()
+        win.show()
+      }
+    })
   }
 }
 
@@ -68,7 +97,7 @@ app.on('ready', async () => {
 // Exit cleanly on request from parent process in development mode.
 if (isDevelopment) {
   if (process.platform === 'win32') {
-    process.on('message', (data) => {
+    process.on('message', data => {
       if (data === 'graceful-exit') {
         app.quit()
       }
@@ -79,3 +108,6 @@ if (isDevelopment) {
     })
   }
 }
+
+// 关闭整个程序方法
+ipcMain.on('close', () => app.quit())

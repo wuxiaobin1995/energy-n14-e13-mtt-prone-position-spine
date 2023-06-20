@@ -1,0 +1,52 @@
+/*
+ * @Author      : Mr.bin
+ * @Date        : 2021-09-11 09:40:14
+ * @LastEditTime: 2021-09-13 08:56:19
+ * @Description : 全局CSS变量
+ */
+
+/* font-size
+------------------------------ */
+$font-80: 80px; // 产品站大标题
+$font-38: 38px; // 产品站标题
+$font-28: 28px; // 导航标题
+$font-26: 26px; // 产品站副标题
+$font-24: 24px;
+$font-22: 22px;
+$font-20: 20px; // 用在较为重要的文字、操作按钮
+$font-18: 18px; // 用于大多数文字
+$font-16: 16px; // 用于辅助性文字
+$font-14: 14px; // 用于一般文字
+$font-12: 12px; // 系统默认大小
+
+/* color
+------------------------------ */
+$color-white: #ffffff;
+$color-black: #000000;
+$color-primary: #ff5777;
+
+$border-color-base: #e5e5e5;
+
+$color-A: #ff6600; // 用于需要突出和强调的文字、按钮和icon
+$color-B: #333333; // 用于较为重要的文字信息、内页标题等
+$color-C: #666666; // 用于普通段落信息 引导词
+$color-D: #999999; // 用于辅助、此要的文字信息、普通按钮的描边
+$color-E: #cccccc; // 用于特别弱的文字
+$color-F: #d7d7d7; // 用于列表分割线、标签秒变
+$color-G: #ffffff; // 用于导航栏文字、按钮文字、白色背景
+$color-H: #e5e5e5; // 用于上下模块分割线
+$color-I: #000000; // 纯黑色背景，用于遮罩层
+$color-J: #f5f5f5; // 弹框标题背景色
+$color-K: #fffaf7; // 订单标题背景色
+
+/* border
+----------------------- */
+$border-width-base: 1px;
+$border-style-base: solid;
+$border-base: $border-width-base $border-style-base $border-color-base;
+
+/* z-index
+------------------------------ */
+$index-1: 1;
+$index-1000: 1000;
+$index-2000: 2000;

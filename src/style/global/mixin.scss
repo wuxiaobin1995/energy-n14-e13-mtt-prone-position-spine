@@ -1,0 +1,53 @@
+/*
+ * @Author      : Mr.bin
+ * @Date        : 2021-09-11 09:37:18
+ * @LastEditTime: 2021-09-15 09:45:22
+ * @Description : 全局CSS混入（一般来说，有多行属性的才应该写成mixin）
+ */
+
+/* flex布局 */
+@mixin flex($sort: row, $hov: center, $col: center, $flex-wrap: nowrap) {
+  display: flex;
+  flex-direction: $sort;
+  justify-content: $hov;
+  align-items: $col;
+  flex-wrap: $flex-wrap;
+}
+
+/* 边框 */
+@mixin border($bw: 1px, $bs: solid, $bc: #ff0000) {
+  border: $bw $bs $bc;
+}
+
+/* 文本溢出显示省略号 */
+@mixin ellipsis($rowCount: 1) {
+  @if $rowCount <=1 {
+    overflow: hidden; // 超出的文本隐藏
+    white-space: nowrap; // 溢出不换行
+    text-overflow: ellipsis; // 溢出用省略号显示
+  } @else {
+    overflow: hidden; // 超出的文本隐藏
+    text-overflow: ellipsis; // 溢出用省略号显示
+    display: -webkit-box; // 将对象作为弹性伸缩盒子模型显示
+    -webkit-box-orient: vertical; // 设置伸缩盒子的子元素排列方式
+    -webkit-line-clamp: $rowCount; // 要显示的行数
+  }
+}
+
+/*
+ * 绝对定位
+ * 一般遵循子绝父相的原则
+ * 会脱离文档流，不占据原来的空间，相当于浮起来了（相对定位则不会脱离文档流）
+ * 变成内联盒子，宽度由内容决定
+ */
+@mixin box-absolute($top: 0, $left: 0) {
+  position: absolute;
+  top: $top;
+  left: $left;
+}
+
+/* 背景图片 */
+@mixin bg-img($img: '', $repeat: no-repeat, $size: contain) {
+  background: url($img) $repeat center center;
+  background-size: $size;
+}

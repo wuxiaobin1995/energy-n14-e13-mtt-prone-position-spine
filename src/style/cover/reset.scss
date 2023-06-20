@@ -1,0 +1,52 @@
+/*
+ * @Author      : Mr.bin
+ * @Date        : 2021-09-10 17:35:51
+ * @LastEditTime: 2021-09-13 11:37:45
+ * @Description : 桌面应用-样式重置表
+ */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  width: 100%; // 这里不用100vw是因为怕出现横向滚动条
+  height: 100vh;
+  // min-width: 1200px; // 最小宽度
+  // min-height: 672px; // 最小高度
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+input {
+  font: normal;
+}
+
+input:focus,
+a:focus,
+a:active,
+div:focus {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
