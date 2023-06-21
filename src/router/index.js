@@ -1,7 +1,7 @@
 /*
  * @Author      : Mr.bin
  * @Date        : 2023-06-16 21:32:53
- * @LastEditTime: 2023-06-20 17:38:16
+ * @LastEditTime: 2023-06-21 11:20:48
  * @Description : 路由
  */
 import Vue from 'vue'
@@ -58,9 +58,54 @@ const routes = [
         name: 'flexibility-measure',
         component: () => import('@/views/test-mode/flexibility/measure'),
         meta: ['活动度测试-具体测量']
-      }
+      },
 
       /* 训练 */
+      // 腹式呼吸训练-具体测量
+      {
+        path: 'abdominal-respiration-measure',
+        name: 'abdominal-respiration-measure',
+        component: () =>
+          import('@/views/train-mode/abdominal-respiration/measure'),
+        meta: ['腹式呼吸训练-具体测量']
+      },
+      // 活动度训练-具体测量
+      {
+        path: 'activity-improvement-measure',
+        name: 'activity-improvement-measure',
+        component: () =>
+          import('@/views/train-mode/activity-improvement/measure'),
+        meta: ['活动度训练-具体测量']
+      },
+      // 内核心激活训练-具体测量
+      {
+        path: 'stabilizer-activation-measure',
+        name: 'stabilizer-activation-measure',
+        component: () =>
+          import('@/views/train-mode/stabilizer-activation/measure'),
+        meta: ['内核心激活训练-具体测量']
+      },
+      // 本体感觉训练-具体测量
+      {
+        path: 'deep-sensory-measure',
+        name: 'deep-sensory-measure',
+        component: () => import('@/views/train-mode/deep-sensory/measure'),
+        meta: ['本体感觉训练-具体测量']
+      },
+      // 静态稳定训练-具体测量
+      {
+        path: 'static-measure',
+        name: 'static-measure',
+        component: () => import('@/views/train-mode/static/measure'),
+        meta: ['静态稳定训练-具体测量']
+      },
+      // 动态稳定训练-具体测量
+      {
+        path: 'dynamic-measure',
+        name: 'dynamic-measure',
+        component: () => import('@/views/train-mode/dynamic/measure'),
+        meta: ['动态稳定训练-具体测量']
+      }
     ]
   },
 

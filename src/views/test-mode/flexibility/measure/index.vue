@@ -1,7 +1,7 @@
 <!--
  * @Author      : Mr.bin
  * @Date        : 2023-06-20 17:39:31
- * @LastEditTime: 2023-06-20 18:00:50
+ * @LastEditTime: 2023-06-20 21:09:04
  * @Description : 活动度测试-具体测量
 -->
 <template>
@@ -274,7 +274,6 @@ export default {
      */
     initChart() {
       // 计算横坐标数组
-      this.xData = []
       for (let i = 0; i < 180; i++) {
         this.xData.push(parseFloat((i * 0.1).toFixed(1)))
       }
@@ -357,7 +356,7 @@ export default {
             pattern: '活动度测试',
             minDepth: minDepth, // 下限
             maxDepth: maxDepth, // 上限
-            flexibility: flexibility // 活动度值
+            flexibility: this.flexibility // 活动度值
           }
 
           /* 暂存至 sessionStorage */
