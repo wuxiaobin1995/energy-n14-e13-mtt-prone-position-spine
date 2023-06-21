@@ -1,7 +1,7 @@
 <!--
  * @Author      : Mr.bin
  * @Date        : 2023-06-20 21:06:45
- * @LastEditTime: 2023-06-20 22:38:52
+ * @LastEditTime: 2023-06-21 21:23:41
  * @Description : 活动度训练-具体测量
 -->
 <template>
@@ -443,7 +443,7 @@ export default {
     },
 
     /**
-     * @description: 开始训练按钮
+     * @description: 开始按钮
      */
     handleStart() {
       if (this.usbPort) {
