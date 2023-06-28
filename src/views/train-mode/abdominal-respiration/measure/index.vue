@@ -1,7 +1,7 @@
 <!--
  * @Author      : Mr.bin
  * @Date        : 2023-06-20 21:06:45
- * @LastEditTime: 2023-06-21 11:16:32
+ * @LastEditTime: 2023-06-28 11:19:25
  * @Description : 腹式呼吸训练-具体测量
 -->
 <template>
@@ -111,7 +111,7 @@ export default {
       targetUp: this.$store.state.settings[0].targetUp, // 上限
       targetDown: this.$store.state.settings[0].targetDown, // 下限
       midpoint: null, // 活动度中点
-      target: this.$store.state.settings[0].target, // 训练目标
+      target: this.$store.state.settings[0].targetBreathe, // 训练目标
       num: this.$store.state.settings[0].num, // 次数
       nowNum: 0, // 实时的次数
       groups: this.$store.state.settings[0].groups, // 组数
@@ -549,7 +549,7 @@ export default {
         const item = comprehensiveArray[i]
         const contrast = contrastArray[i]
         const differenceVal = Math.abs(item - contrast)
-        if (differenceVal >= 0 && differenceVal <= 5) {
+        if (differenceVal >= 0 && differenceVal <= 2) {
           yesArray.push(differenceVal)
         }
       }

@@ -1,7 +1,7 @@
 <!--
  * @Author      : Mr.bin
  * @Date        : 2023-06-20 21:06:45
- * @LastEditTime: 2023-06-21 21:23:41
+ * @LastEditTime: 2023-06-28 11:19:39
  * @Description : 活动度训练-具体测量
 -->
 <template>
@@ -529,7 +529,7 @@ export default {
         const item = comprehensiveArray[i]
         const contrast = contrastArray[i]
         const differenceVal = Math.abs(item - contrast)
-        if (differenceVal >= 0 && differenceVal <= 5) {
+        if (differenceVal >= 0 && differenceVal <= 2) {
           yesArray.push(differenceVal)
         }
       }

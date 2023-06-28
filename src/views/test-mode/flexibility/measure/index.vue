@@ -1,7 +1,7 @@
 <!--
  * @Author      : Mr.bin
  * @Date        : 2023-06-20 17:39:31
- * @LastEditTime: 2023-06-20 21:09:04
+ * @LastEditTime: 2023-06-28 10:51:12
  * @Description : 活动度测试-具体测量
 -->
 <template>
@@ -79,6 +79,9 @@
 </template>
 
 <script>
+/* 路径模块 */
+import path from 'path'
+
 /* 串口通信库 */
 import SerialPort from 'serialport'
 import Readline from '@serialport/parser-readline'

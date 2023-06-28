@@ -191,8 +191,8 @@ export default {
       groupRestTime: this.$store.state.settings[0].groupRestTime, // 组间休息时长
       nowGroupRestTime: this.$store.state.settings[0].groupRestTime, // 实时休息时间倒计时
       trainTimeClock: null, // 训练计时器
-      keepTime: this.$store.state.settings[0].keepTime, // 训练时长
-      nowTrainTime: this.$store.state.settings[0].keepTime, // 实时训练倒计时
+      trainTime: this.$store.state.settings[0].trainTime, // 训练时长
+      nowTrainTime: this.$store.state.settings[0].trainTime, // 实时训练倒计时
 
       core: 0, // 光标实时数值
 
@@ -480,7 +480,7 @@ export default {
       // 重新启动训练计时器
       this.depthArray = []
       this.completion = null
-      this.nowTrainTime = this.keepTime
+      this.nowTrainTime = this.trainTime
       this.setTrainTimeClock()
 
       // 关闭弹窗
@@ -523,7 +523,7 @@ export default {
           action: this.action, // 动作
           target: this.target, // 训练目标
           scope: this.scope, // 目标范围
-          keepTime: this.keepTime, // 训练时长
+          trainTime: this.trainTime, // 训练时长
           groups: this.groups, // 训练组数
           groupRestTime: this.groupRestTime, // 组间休息时长
           completionResultArray: this.completionResultArray, // 多组的完成度数组
