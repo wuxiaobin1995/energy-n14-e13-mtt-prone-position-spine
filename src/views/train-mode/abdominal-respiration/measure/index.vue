@@ -1,7 +1,7 @@
 <!--
  * @Author      : Mr.bin
  * @Date        : 2023-06-20 21:06:45
- * @LastEditTime: 2023-06-28 11:19:25
+ * @LastEditTime: 2023-07-03 10:29:35
  * @Description : 腹式呼吸训练-具体测量
 -->
 <template>
@@ -573,6 +573,8 @@ export default {
           groupRestTime: this.groupRestTime, // 组间休息时长
           keepTime: this.keepTime, // 保持时长
           restTime: this.restTime, // 休息时长
+          standardArray: this.standardArray, // 基础参考曲线
+          bgArray: this.bgArray, // 参考曲线，暂定5个一组
           allDepthArray: this.allDepthArray, // 多组完整数据数组
           comprehensiveArray: comprehensiveArray, // 综合曲线轨迹
           completion: completion // 完成度%

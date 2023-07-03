@@ -1,7 +1,7 @@
 <!--
  * @Author      : Mr.bin
  * @Date        : 2023-06-21 10:58:34
- * @LastEditTime: 2023-06-27 14:02:14
+ * @LastEditTime: 2023-07-03 10:31:29
  * @Description : 动态稳定训练-具体测量
 -->
 <template>

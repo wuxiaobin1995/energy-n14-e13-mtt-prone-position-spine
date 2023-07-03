@@ -1,7 +1,7 @@
 <!--
  * @Author      : Mr.bin
  * @Date        : 2023-06-20 21:06:45
- * @LastEditTime: 2023-06-28 11:19:39
+ * @LastEditTime: 2023-07-03 10:30:11
  * @Description : 活动度训练-具体测量
 -->
 <template>
@@ -550,6 +550,8 @@ export default {
           groups: this.groups, // 组数
           intervalTime: this.intervalTime, // 间隔时长
           groupRestTime: this.groupRestTime, // 组间休息时长
+          standardArray: this.standardArray, // 基础参考曲线
+          bgArray: this.bgArray, // 参考曲线，暂定5个一组
           allDepthArray: this.allDepthArray, // 多组完整数据数组
           comprehensiveArray: comprehensiveArray, // 综合曲线轨迹
           completion: completion // 完成度%

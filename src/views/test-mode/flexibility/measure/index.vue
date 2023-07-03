@@ -1,7 +1,7 @@
 <!--
  * @Author      : Mr.bin
  * @Date        : 2023-06-20 17:39:31
- * @LastEditTime: 2023-06-28 10:51:12
+ * @LastEditTime: 2023-07-03 10:25:36
  * @Description : 活动度测试-具体测量
 -->
 <template>
@@ -355,11 +355,25 @@ export default {
         settings.shift()
         this.$store.dispatch('setSettings', settings).then(() => {
           /* 数据 */
+          // 计算评价
+          let textLv = ''
+          if (this.flexibility >= 50 && this.flexibility <= 100) {
+            textLv = '很大'
+          } else if (this.flexibility >= 40 && this.flexibility < 50) {
+            textLv = '大'
+          } else if (this.flexibility >= 30 && this.flexibility < 40) {
+            textLv = '适中'
+          } else if (this.flexibility >= 20 && this.flexibility < 30) {
+            textLv = '小'
+          } else {
+            textLv = '很小'
+          }
           const obj = {
             pattern: '活动度测试',
             minDepth: minDepth, // 下限
             maxDepth: maxDepth, // 上限
-            flexibility: this.flexibility // 活动度值
+            flexibility: this.flexibility, // 活动度值
+            textLv: textLv // 评价
           }
 
           /* 暂存至 sessionStorage */
